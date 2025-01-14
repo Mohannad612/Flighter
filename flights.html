@@ -1,0 +1,30 @@
+<!-- flights.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    Available Flights
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Available Flights</h2>
+        <form method="POST">
+            {{ ticket_form.hidden_tag() }}
+            <div class="form-group">
+                {{ ticket_form.flight.label() }}
+                {{ ticket_form.flight(class="form-control") }}
+            </div>
+
+            <h3>Passengers</h3>
+            {% for form in ticket_form.passengers %}
+                <div class="form-group">
+                    {{ form.name.label() }}
+                    {{ form.name(class="form-control", placeholder="Passenger Name") }}
+                    {{ form.seat.label() }}
+                    {{ form.seat(class="form-control") }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Purchase Tickets</button>
+        </form>
+    </div>
+{% endblock %}

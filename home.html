@@ -1,0 +1,14 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Welcome to Flighters</h1>
+        <p>Your gateway to flight bookings.</p>
+        <a href="{{ url_for('flights_page') }}" class="btn btn-primary">View Available Flights</a>
+    </div>
+{% endblock %}
